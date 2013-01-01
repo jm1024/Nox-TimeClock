@@ -1,0 +1,49 @@
+timeClock 0.05.00
+
+This is an APLHA
+
+Requires Nox 3.08.13 or higher
+
+-------------------------------------
+Notes:
+-------------------------------------
+- This is a custom time clock application. SMS transmission is setup to use the netCore service.
+
+- Installation:
+  Copy timeClock.aspx to \nox\www\custom\
+  Copy timeClock.aspx.cs to \nox\www\custom\
+
+- Use:
+  Setup a notification as normal with the following exceptions
+  Notification Type = HTTP
+  For SMS:
+    Target = http://127.0.0.1/custom/timeClock?sendVia=sms&recipient=915555555
+    replace the 915555555 with the intended SMS recipient
+  For SMTP(email):
+    Target = http://127.0.0.1/custom/timeClock?sendVia=smtp&recipient=nox@simplyrfid.com
+    replace the nox@simplyrfid.com with the intended SMTP recipient
+  recipient and sendVia can be omitted if they are specified in the timeClock.aspx.cs
+  Time windows can be changed in timeClock.aspx.cs. They are defined as follows:
+    public int arriveBeginHour = 9;
+    public int arriveBeginMinute = 30;
+    public int arriveEndHour = 11;
+    public int arriveEndMinute = 0;
+    public int exitBeginHour = 17;
+    public int exitBeginMinute = 30;
+    public int exitEndHour = 20;
+    public int exitEndMinute = 0;
+  
+-------------------------------------
+Changes:
+-------------------------------------
+- Initial Release
+
+-------------------------------------
+Technical Changes:
+-------------------------------------
+- Initial Release
+
+-------------------------------------
+Database Changes:
+-------------------------------------
+- None
